@@ -3,6 +3,7 @@
 import socket
 import os
 
+
 def client():
     host = input('Server IP: ').strip()  # The server's hostname or IP address
     port = 65000        # The port used by the server
