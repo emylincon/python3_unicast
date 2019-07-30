@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import socket
-
+import os
 
 def client():
     host = input('Server IP: ').strip()  # The server's hostname or IP address
@@ -21,6 +21,7 @@ def client():
 
 
 def main():
+    os.system('clear')
     print("================== Welcome to Client Platform ===================")
     client()
 
