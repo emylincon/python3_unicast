@@ -36,3 +36,7 @@ def main():
     os.system('clear')
     print('================== Programme Active =====================\n')
     unicast_call()
+
+
+if __name__ == "__main__":
+    main()
