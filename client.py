@@ -2,12 +2,15 @@
 
 import socket
 
-HOST = '192.168.40.153'  # The server's hostname or IP address
-PORT = 65000        # The port used by the server
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.connect((HOST, PORT))
-    s.sendall(b'Hello, world')
-    data = s.recv(1024)
+def client():
+    host = input('Server IP: ').strip()  # The server's hostname or IP address
+    port = 65000        # The port used by the server
 
-print('Received', repr(data))
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((host, port))
+        while True:
+            send = input('Enter Message: ').strip()
+            s.sendall(str.encode(send))
+
+
