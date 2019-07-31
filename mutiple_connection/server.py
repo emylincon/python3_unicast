@@ -40,6 +40,7 @@ def receive_connection():
 
         except KeyboardInterrupt:
             print('\nProgramme Forcefully Terminated')
+            break
 
 
 def main():
