@@ -36,6 +36,7 @@ def receive_connection():
                 conn, addr = s.accept()
 
                 Thread(target=receive_data, args=(conn, addr)).start()
+                port += 10
 
         except KeyboardInterrupt:
             print('\nProgramme Forcefully Terminated')
