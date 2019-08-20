@@ -3,6 +3,7 @@
 import socket
 import os
 import threading
+import time
 
 t_lock = threading.Lock()
 
@@ -21,6 +22,7 @@ def client():
                     t_lock.acquire()
                     s.sendall(str.encode(send))
                     t_lock.release()
+                    time.sleep(1)
                 except KeyboardInterrupt:
                     print('exit')
                     break
