@@ -13,13 +13,13 @@ def client():
 
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+
+            s.connect((host, port))
             while True:
                 try:
-                    t_lock.acquire()
-                    s.connect((host, port))
                     send = 'hello'
+                    t_lock.acquire()
                     s.sendall(str.encode(send))
-                    s.close()
                     t_lock.release()
                 except KeyboardInterrupt:
                     print('exit')
