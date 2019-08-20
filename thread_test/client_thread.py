@@ -19,6 +19,7 @@ def client():
                     s.connect((host, port))
                     send = 'hello'
                     s.sendall(str.encode(send))
+                    s.close()
                     t_lock.release()
                 except KeyboardInterrupt:
                     print('exit')
